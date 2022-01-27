@@ -34,6 +34,13 @@ class Product
     #[ORM\Column(type: 'boolean')]
     private $isDelivered;
 
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+        $this->isPublished = false;
+        $this->isDelivered = false;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
